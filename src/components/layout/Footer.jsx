@@ -10,10 +10,10 @@ function LinkedInIcon({ className = "" }) {
   );
 }
 
-function XIcon({ className = "" }) {
+function FacebookIcon({ className = "" }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.912-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+      <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
     </svg>
   );
 }
@@ -44,54 +44,56 @@ const FOOTER_LINKS = {
 
 const SOCIAL_LINKS = [
   {
-    href: "https://linkedin.com/company/martechadda",
+    href: "https://www.linkedin.com/company/martechadda/",
     label: "LinkedIn",
     Icon: LinkedInIcon,
   },
   {
-    href: "https://instagram.com/martechadda",
+    href: "https://www.instagram.com/martechadda/",
     label: "Instagram",
     Icon: InstagramIcon,
   },
   {
-    href: "https://twitter.com/martechadda",
-    label: "X (Twitter)",
-    Icon: XIcon,
+    href: "https://www.facebook.com/martechadda/",
+    label: "Facebook",
+    Icon: FacebookIcon,
   },
 ];
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#111111] text-white mt-auto">
+    <footer className="w-full bg-[#111111] text-white mt-auto" style={{ fontFamily: "'Inter Display', 'inter display placeholder', sans-serif" }}>
       {/* ── Main footer content ── */}
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-14 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-[260px_1fr_1fr_auto] gap-10 md:gap-16">
+        <div className="grid grid-cols-2 md:grid-cols-[2.5fr_1fr_1fr_0.5fr] gap-10 md:gap-8 lg:gap-16">
 
           {/* ── Column 1: Brand ── */}
-          <div className="flex flex-col gap-5">
-            {/* Logo + wordmark */}
-            <Link to="/" className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2DC98E] rounded-sm w-fit" aria-label="MarTechAdda Home">
-              <img src="/logo.png" alt="MarTechAdda Logo" className="h-[52px] w-auto object-contain" />
-            </Link>
-
-            {/* Tagline */}
-            <p className="text-[13.5px] text-white/55 leading-relaxed font-light max-w-[220px]">
-              Neutral Marketing Discovery<br />
-              &amp; Safe Engagement.
-            </p>
+          <div className="col-span-2 md:col-span-1 flex flex-col gap-6">
+            <div className="flex flex-row items-center gap-4">
+              {/* Logo + wordmark */}
+              <Link to="/" className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2DC98E] rounded-sm w-fit shrink-0" aria-label="MarTechAdda Home">
+                <img src="/logo.png" alt="MarTechAdda Logo" className="h-[52px] w-auto object-contain" />
+              </Link>
+  
+              {/* Tagline */}
+              <p className="text-[16px] md:text-[20px] text-white leading-snug font-light m-0">
+                Neutral Marketing Discovery<span className="md:hidden"> </span><br className="hidden md:block" />
+                &amp; Safe Engagement.
+              </p>
+            </div>
 
             {/* Email chip */}
             <a
               href="mailto:business@martechadda.com"
-              className="mt-1 inline-block border border-white/15 rounded-md px-4 py-2 text-[12.5px] text-white/60 hover:text-white hover:border-white/35 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2DC98E] w-fit"
+              className="mt-1 inline-block border border-white/30 rounded-md px-4 py-2 text-[13px] md:text-[16px] text-white hover:text-red-500 hover:border-red-500 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 w-full md:w-fit text-center md:text-left"
             >
               business@martechadda.com
             </a>
           </div>
 
           {/* ── Column 2: Home links ── */}
-          <div>
-            <h5 className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/40 mb-5 select-none">
+          <div className="col-span-1">
+            <h5 className="text-[16px] md:text-[20px] font-medium capitalize text-white mb-4 md:mb-6 select-none">
               Home
             </h5>
             <ul className="space-y-3">
@@ -99,7 +101,7 @@ export default function Footer() {
                 <li key={label}>
                   <a
                     href={href}
-                    className="text-[13.5px] text-white/65 hover:text-white transition-colors duration-150 focus:outline-none focus-visible:ring-1 focus-visible:ring-[#2DC98E] rounded"
+                    className="text-[14px] md:text-[18px] text-white hover:text-red-500 transition-colors duration-150 focus:outline-none focus-visible:ring-1 focus-visible:ring-red-500 rounded"
                   >
                     {label}
                   </a>
@@ -109,8 +111,8 @@ export default function Footer() {
           </div>
 
           {/* ── Column 3: Pages ── */}
-          <div>
-            <h5 className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/40 mb-5 select-none">
+          <div className="col-span-1">
+            <h5 className="text-[16px] md:text-[20px] font-medium capitalize text-white mb-4 md:mb-6 select-none">
               Pages
             </h5>
             <ul className="space-y-3">
@@ -118,7 +120,7 @@ export default function Footer() {
                 <li key={label}>
                   <a
                     href={href}
-                    className="text-[13.5px] text-white/65 hover:text-white transition-colors duration-150 focus:outline-none focus-visible:ring-1 focus-visible:ring-[#2DC98E] rounded"
+                    className="text-[14px] md:text-[18px] text-white hover:text-red-500 transition-colors duration-150 focus:outline-none focus-visible:ring-1 focus-visible:ring-red-500 rounded"
                   >
                     {label}
                   </a>
@@ -128,11 +130,11 @@ export default function Footer() {
           </div>
 
           {/* ── Column 4: Social ── */}
-          <div>
-            <h5 className="text-[11px] font-bold uppercase tracking-[0.12em] text-white/40 mb-5 select-none">
+          <div className="col-span-2 md:col-span-1 flex flex-row items-center justify-between md:flex-col md:items-start md:justify-start border-b border-white/10 md:border-none pb-6 md:pb-0 mb-2 md:mb-0">
+            <h5 className="text-[16px] md:text-[20px] font-medium capitalize text-white mb-0 md:mb-6 select-none">
               Social
             </h5>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-row md:flex-col gap-4">
               {SOCIAL_LINKS.map(({ href, label, Icon }) => (
                 <a
                   key={label}
@@ -140,9 +142,9 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Follow MarTechAdda on ${label}`}
-                  className="w-9 h-9 rounded-lg border border-white/10 bg-white/[0.04] flex items-center justify-center text-white/50 hover:text-white hover:border-white/30 hover:bg-white/[0.08] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2DC98E]"
+                  className="flex items-center justify-center text-white hover:text-red-500 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 w-fit"
                 >
-                  <Icon className="w-[16px] h-[16px]" />
+                  <Icon className="w-[18px] h-[18px]" />
                 </a>
               ))}
             </div>
@@ -151,14 +153,14 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom bar ── */}
-      <div className="border-t border-white/[0.07]">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[12px] text-white/35 select-none">
-            © 2026 MarTechAdda. All rights reserved.
+      <div className="border-t border-white/[0.07] pt-2 md:pt-0">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-5 flex flex-col-reverse sm:flex-row items-center justify-between gap-5 sm:gap-3">
+          <p className="text-[14px] md:text-[18px] text-white select-none">
+            © 2025 MarTechAdda. All rights reserved.
           </p>
           <a
             href="#"
-            className="text-[12px] text-white/35 hover:text-white/70 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-white/40 rounded"
+            className="text-[14px] md:text-[18px] text-white hover:text-red-500 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-red-500 rounded"
           >
             Privacy Policy
           </a>

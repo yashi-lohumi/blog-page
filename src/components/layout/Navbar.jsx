@@ -56,7 +56,7 @@ export default function Navbar() {
         boxShadow: "0 4px 24px rgba(0,0,0,0.04)",
       }}
     >
-      <div className="flex items-center justify-between w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div className="flex items-center justify-between w-full mx-auto px-4 md:px-8">
 
         {/* ── Brand Logo ── */}
         <Link
@@ -70,48 +70,44 @@ export default function Navbar() {
 
         {/* ── Navigation Links (right-aligned) ── */}
         <nav
-          className="hidden md:flex items-center gap-1 lg:gap-2 ml-auto mr-6"
+          className="hidden md:flex items-center ml-auto mr-2 md:mr-3"
           aria-label="Primary navigation"
         >
-          {NAV_LINKS.map(({ label, href, external }) => {
+          {NAV_LINKS.map(({ label, href, external }, index) => {
             const isActive = label === "Blog" && isBlogActive;
 
-            if (external) {
-              return (
-                <a
-                  key={label}
-                  href={href}
-                  className="relative px-3 py-1.5 text-[13.5px] font-medium text-on-surface-variant hover:text-black transition-colors duration-200 rounded-md hover:bg-black/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-action-orange"
-                >
-                  {label}
-                </a>
-              );
-            }
+            const linkClass = `relative px-2 lg:px-3 py-1.5 text-[13.5px] rounded-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-action-orange ${
+              external
+                ? "font-medium text-on-surface-variant hover:text-black hover:bg-black/[0.04]"
+                : "font-semibold " + (isActive ? "text-action-orange" : "text-on-surface-variant hover:text-black hover:bg-black/[0.04]")
+            }`;
 
             return (
-              <Link
-                key={label}
-                to={href}
-                className={`relative px-3 py-1.5 text-[13.5px] font-semibold rounded-md transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-action-orange ${
-                  isActive
-                    ? "text-action-orange"
-                    : "text-on-surface-variant hover:text-black hover:bg-black/[0.04]"
-                }`}
-              >
-                {label}
-                {isActive && (
-                  <span
-                    className="absolute bottom-0 left-3 right-3 h-[2px] bg-action-orange rounded-full"
-                    aria-hidden="true"
-                  />
+              <React.Fragment key={label}>
+                {external ? (
+                  <a href={href} className={linkClass}>
+                    {label}
+                  </a>
+                ) : (
+                  <Link to={href} className={linkClass}>
+                    {label}
+                    {isActive && (
+                      <span
+                        className="absolute bottom-0 left-3 right-3 h-[2px] bg-action-orange rounded-full"
+                        aria-hidden="true"
+                      />
+                    )}
+                  </Link>
                 )}
-              </Link>
+                {/* Vertical separator between links */}
+                <span className="w-[1px] h-3.5 bg-black/15 mx-1 lg:mx-1.5" aria-hidden="true" />
+              </React.Fragment>
             );
           })}
         </nav>
 
         {/* ── Right Actions: Login / User Avatar ── */}
-        <div className="flex items-center gap-2 md:gap-3 flex-shrink-0">
+        <div className="flex items-center flex-shrink-0">
           <button
             className="md:hidden p-2 text-on-surface-variant hover:text-black focus:outline-none flex items-center justify-center rounded-md hover:bg-black/[0.04] transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

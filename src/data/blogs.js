@@ -118,7 +118,7 @@ export const blogs = [
       },
       {
         "type": "image",
-        "src": "https://images.unsplash.com/photo-1543286386-7a39e2d90bc8?auto=format&fit=crop&q=80&w=800",
+        "src": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
         "alt": "Data scientists analyzing predictive models on multiple screens"
       },
       {
@@ -952,7 +952,7 @@ export const blogs = [
     "slug": "rethinking-b2b-attribution-cookieless-era",
     "title": "Rethinking B2B Attribution in a Cookieless Era",
     "excerpt": "Why multi-touch attribution models are failing and how marketing teams are adopting mixed media models and clean rooms.",
-    "coverImage": "https://images.unsplash.com/photo-1543286386-7a39e2d90bc8?auto=format&fit=crop&q=80&w=800",
+    "coverImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
     "category": "Analytics",
     "authorId": "arjun-mehta",
     "publishDate": "Oct 30, 2024",
