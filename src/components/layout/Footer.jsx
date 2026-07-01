@@ -85,7 +85,7 @@ export default function Footer() {
             {/* Email chip */}
             <a
               href="mailto:business@martechadda.com"
-              className="mt-1 inline-block border border-white/30 rounded-md px-4 py-2 text-[13px] md:text-[16px] text-white hover:text-red-500 hover:border-red-500 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 w-full md:w-fit text-center md:text-left"
+              className="mt-1 inline-block border border-white/30 rounded-md px-4 py-2 text-[13px] md:text-[16px] text-white hover:text-red-500 active:text-red-500 hover:border-red-500 active:border-red-500 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 w-full md:w-fit text-center md:text-left"
             >
               business@martechadda.com
             </a>
@@ -101,7 +101,7 @@ export default function Footer() {
                 <li key={label}>
                   <a
                     href={href}
-                    className="text-[14px] md:text-[18px] text-white hover:text-red-500 transition-colors duration-150 focus:outline-none focus-visible:ring-1 focus-visible:ring-red-500 rounded"
+                    className="text-[14px] md:text-[18px] text-white hover:text-red-500 active:text-red-500 transition-colors duration-150 focus:outline-none focus-visible:ring-1 focus-visible:ring-red-500 rounded"
                   >
                     {label}
                   </a>
@@ -120,7 +120,7 @@ export default function Footer() {
                 <li key={label}>
                   <a
                     href={href}
-                    className="text-[14px] md:text-[18px] text-white hover:text-red-500 transition-colors duration-150 focus:outline-none focus-visible:ring-1 focus-visible:ring-red-500 rounded"
+                    className="text-[14px] md:text-[18px] text-white hover:text-red-500 active:text-red-500 transition-colors duration-150 focus:outline-none focus-visible:ring-1 focus-visible:ring-red-500 rounded"
                   >
                     {label}
                   </a>
@@ -142,7 +142,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Follow MarTechAdda on ${label}`}
-                  className="flex items-center justify-center text-white hover:text-red-500 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 w-fit"
+                  className="flex items-center justify-center text-white hover:text-red-500 active:text-red-500 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 w-fit"
                 >
                   <Icon className="w-[18px] h-[18px]" />
                 </a>
@@ -160,7 +160,7 @@ export default function Footer() {
           </p>
           <a
             href="#"
-            className="text-[14px] md:text-[18px] text-white hover:text-red-500 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-red-500 rounded"
+            className="text-[14px] md:text-[18px] text-white hover:text-red-500 active:text-red-500 transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-red-500 rounded"
           >
             Privacy Policy
           </a>

@@ -67,6 +67,15 @@ export default function RelatedArticles({ currentBlog, allBlogs = [] }) {
   const scroll = (dir) => {
     const el = scrollRef.current;
     if (!el) return;
+    
+    // Prevent scrolling the page if the container has no overflow
+    const maxScrollLeft = el.scrollWidth - el.clientWidth;
+    if (maxScrollLeft <= 0) return;
+
+    // Prevent scrolling if already at the edge to avoid page shift
+    if (dir === -1 && el.scrollLeft <= 0) return;
+    if (dir === 1 && el.scrollLeft >= maxScrollLeft) return;
+
     el.scrollBy({ left: dir * 320, behavior: "smooth" });
   };
 
@@ -80,6 +89,7 @@ export default function RelatedArticles({ currentBlog, allBlogs = [] }) {
         {/* Scroll arrows */}
         <div className="flex items-center gap-2">
           <button
+            type="button"
             onClick={() => scroll(-1)}
             aria-label="Scroll related articles left"
             className="w-8 h-8 rounded-full border border-outline-variant/25 bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-action-orange hover:border-action-orange/40 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-action-orange"
@@ -87,6 +97,7 @@ export default function RelatedArticles({ currentBlog, allBlogs = [] }) {
             <span className="material-symbols-outlined text-[18px]">chevron_left</span>
           </button>
           <button
+            type="button"
             onClick={() => scroll(1)}
             aria-label="Scroll related articles right"
             className="w-8 h-8 rounded-full border border-outline-variant/25 bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-action-orange hover:border-action-orange/40 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-action-orange"

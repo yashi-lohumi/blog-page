@@ -109,7 +109,7 @@ export default function NewsletterCTA({
               <Button
                 type="submit"
                 variant="primary"
-                className="bg-action-orange text-white hover:bg-[#d96a0d] font-bold text-base px-8 h-12 md:h-14 rounded-none whitespace-nowrap relative z-10 w-full transition-none"
+                className="bg-action-orange text-white hover:bg-[#d96a0d] active:bg-[#d96a0d] font-bold text-base px-8 h-12 md:h-14 rounded-none whitespace-nowrap relative z-10 w-full transition-none"
               >
                 Subscribe
               </Button>
