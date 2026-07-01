@@ -91,6 +91,7 @@
   *:focus-visible {
     outline: 2px solid var(--color-action-orange);
     outline-offset: 2px;
+  }
 }
 
 @layer utilities {
