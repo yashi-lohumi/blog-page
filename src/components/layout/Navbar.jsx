@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Menu, X, ChevronDown, Bookmark, User, Settings, LogOut } from "lucide-react";
 import { useAuth } from "../../context/AuthContext";
 
 const NAV_LINKS = [
@@ -113,9 +114,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
-            <span className="material-symbols-outlined text-[24px]">
-              {mobileMenuOpen ? 'close' : 'menu'}
-            </span>
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
           {!isAuthenticated ? (
             <button
@@ -150,12 +149,11 @@ export default function Navbar() {
                 <span className="hidden lg:block text-[13.5px] font-medium text-on-surface-variant group-hover:text-black transition-colors">
                   {user.name.split(" ")[0]}
                 </span>
-                <span
-                  className={`material-symbols-outlined text-outline text-[16px] transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
+                <ChevronDown
+                  size={16}
+                  className={`text-outline transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`}
                   aria-hidden="true"
-                >
-                  expand_more
-                </span>
+                />
               </button>
 
               {/* Dropdown Menu */}
@@ -182,12 +180,7 @@ export default function Navbar() {
                       }}
                       className="w-full text-left flex items-center gap-3 px-4 py-2.5 text-[13.5px] font-medium text-on-surface-variant hover:text-black hover:bg-black/[0.04] transition-colors duration-150 focus:outline-none focus-visible:bg-black/[0.06]"
                     >
-                      <span
-                        className="material-symbols-outlined text-[18px] text-action-orange"
-                        style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}
-                      >
-                        bookmark
-                      </span>
+                      <Bookmark size={18} fill="currentColor" className="text-action-orange" />
                       Saved Articles
                     </button>
 
@@ -197,7 +190,7 @@ export default function Navbar() {
                       onClick={() => setDropdownOpen(false)}
                       className="flex items-center gap-3 px-4 py-2.5 text-[13.5px] font-medium text-on-surface-variant hover:text-black hover:bg-black/[0.04] transition-colors duration-150 focus:outline-none focus-visible:bg-black/[0.06]"
                     >
-                      <span className="material-symbols-outlined text-[18px] text-outline">person</span>
+                      <User size={18} className="text-outline" />
                       My Profile
                     </a>
 
@@ -207,7 +200,7 @@ export default function Navbar() {
                       onClick={() => setDropdownOpen(false)}
                       className="flex items-center gap-3 px-4 py-2.5 text-[13.5px] font-medium text-on-surface-variant hover:text-black hover:bg-black/[0.04] transition-colors duration-150 focus:outline-none focus-visible:bg-black/[0.06]"
                     >
-                      <span className="material-symbols-outlined text-[18px] text-outline">settings</span>
+                      <Settings size={18} className="text-outline" />
                       Settings
                     </a>
                   </div>
@@ -221,7 +214,7 @@ export default function Navbar() {
                       }}
                       className="w-full text-left flex items-center gap-3 px-4 py-2.5 text-[13.5px] font-medium text-red-500 hover:bg-red-50 transition-colors duration-150 focus:outline-none focus-visible:bg-red-50"
                     >
-                      <span className="material-symbols-outlined text-[18px]">logout</span>
+                      <LogOut size={18} />
                       Log Out
                     </button>
                   </div>

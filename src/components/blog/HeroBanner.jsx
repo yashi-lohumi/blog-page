@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Badge from "../ui/Badge";
 import { CAROUSEL_INTERVAL } from "../../data/constants";
 
@@ -137,7 +138,7 @@ export default function HeroBanner({ featuredBlogs = [] }) {
           aria-label={`Read article: ${currentBlog.title}`}
         >
           Read Article
-          <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+          <ArrowRight size={14} />
         </button>
       </div>
 
@@ -149,14 +150,14 @@ export default function HeroBanner({ featuredBlogs = [] }) {
             aria-label="Previous featured article"
             className="absolute left-3 top-1/2 -translate-y-1/2 z-40 w-9 h-9 rounded-full bg-black/30 hover:bg-action-orange text-white flex items-center justify-center backdrop-blur-sm opacity-0 group-hover:opacity-100 focus:opacity-100 transition-all duration-300 focus:outline-none"
           >
-            <span className="material-symbols-outlined text-[20px]">chevron_left</span>
+            <ChevronLeft size={20} />
           </button>
           <button
             onClick={handleNext}
             aria-label="Next featured article"
             className="absolute right-3 top-1/2 -translate-y-1/2 z-40 w-9 h-9 rounded-full bg-black/30 hover:bg-action-orange text-white flex items-center justify-center backdrop-blur-sm opacity-0 group-hover:opacity-100 focus:opacity-100 transition-all duration-300 focus:outline-none"
           >
-            <span className="material-symbols-outlined text-[20px]">chevron_right</span>
+            <ChevronRight size={20} />
           </button>
         </>
       )}

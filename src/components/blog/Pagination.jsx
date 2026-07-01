@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../ui/Button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Pagination({
   currentPage = 1,
@@ -27,7 +28,7 @@ export default function Pagination({
             key={i}
             variant={currentPage === i ? "primary" : "outline"}
             onClick={() => onPageChange(i)}
-            className="w-10 h-10 p-0 rounded-lg flex items-center justify-center font-bold"
+            className="w-10 h-10 !p-0 rounded-lg flex items-center justify-center font-bold"
             aria-label={`Go to page ${i}`}
             aria-current={currentPage === i ? "page" : undefined}
           >
@@ -57,10 +58,10 @@ export default function Pagination({
         variant="outline"
         onClick={handlePrev}
         disabled={currentPage === 1}
-        className="w-10 h-10 p-0 rounded-lg flex items-center justify-center"
+        className="w-10 h-10 !p-0 rounded-lg flex items-center justify-center"
         aria-label="Go to previous page"
       >
-        <span className="material-symbols-outlined text-sm">chevron_left</span>
+        <ChevronLeft size={16} className="flex-shrink-0" />
       </Button>
 
       <div className="flex items-center gap-2">
@@ -71,10 +72,10 @@ export default function Pagination({
         variant="outline"
         onClick={handleNext}
         disabled={currentPage === totalPages}
-        className="w-10 h-10 p-0 rounded-lg flex items-center justify-center"
+        className="w-10 h-10 !p-0 rounded-lg flex items-center justify-center"
         aria-label="Go to next page"
       >
-        <span className="material-symbols-outlined text-sm">chevron_right</span>
+        <ChevronRight size={16} className="flex-shrink-0" />
       </Button>
     </nav>
   );

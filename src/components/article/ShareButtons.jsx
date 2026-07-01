@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "../ui/Button";
 import Toast from "../ui/Toast";
+import { Share2, Twitter, MessageCircle, Mail, Copy } from "lucide-react";
 import { copyToClipboard } from "../../utils/copyToClipboard";
 
 export default function ShareButtons({ title, slug }) {
@@ -39,11 +40,11 @@ export default function ShareButtons({ title, slug }) {
   };
 
   const shareItems = [
-    { id: "linkedin", label: "LinkedIn", icon: "share", tooltip: "Share on LinkedIn" },
-    { id: "x", label: "X / Twitter", icon: "campaign", tooltip: "Share on X" },
-    { id: "whatsapp", label: "WhatsApp", icon: "chat", tooltip: "Share on WhatsApp" },
-    { id: "email", label: "Email", icon: "mail", tooltip: "Share via Email" },
-    { id: "copy", label: "Copy Link", icon: "content_copy", tooltip: "Copy article link" }
+    { id: "linkedin", label: "LinkedIn", Icon: Share2, tooltip: "Share on LinkedIn" },
+    { id: "x", label: "X / Twitter", Icon: Twitter, tooltip: "Share on X" },
+    { id: "whatsapp", label: "WhatsApp", Icon: MessageCircle, tooltip: "Share on WhatsApp" },
+    { id: "email", label: "Email", Icon: Mail, tooltip: "Share via Email" },
+    { id: "copy", label: "Copy Link", Icon: Copy, tooltip: "Copy article link" }
   ];
 
   return (
@@ -62,7 +63,7 @@ export default function ShareButtons({ title, slug }) {
               className="w-10 h-10 border border-outline-variant/30 text-on-surface-variant hover:text-white hover:bg-action-orange transition-colors flex items-center justify-center rounded-full bg-surface-alt focus-visible:ring-2 focus-visible:ring-action-orange shadow-sm"
               ariaLabel={item.tooltip}
             >
-              <span className="material-symbols-outlined text-[18px] select-none">{item.icon}</span>
+              <item.Icon size={18} className="select-none" />
             </Button>
           ))}
         </div>
@@ -82,7 +83,7 @@ export default function ShareButtons({ title, slug }) {
               className="flex items-center gap-1.5 px-3.5 py-1.5 border border-outline-variant/35 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container-high transition-colors focus-visible:ring-2 focus-visible:ring-action-orange"
               ariaLabel={item.tooltip}
             >
-              <span className="material-symbols-outlined text-[16px] select-none">{item.icon}</span>
+              <item.Icon size={16} className="select-none" />
               <span className="text-label-sm">{item.label}</span>
             </Button>
           ))}

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import Button from "../ui/Button";
+import { ChevronDown } from "lucide-react";
 
 export default function SortDropdown({ sortBy, onSortChange }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,9 +41,7 @@ export default function SortDropdown({ sortBy, onSortChange }) {
         aria-label={`Sort articles: currently sorted by ${sortBy}`}
       >
         <span>Sort By: <strong>{sortBy}</strong></span>
-        <span className="material-symbols-outlined text-sm transition-transform duration-200 select-none" style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
-          expand_more
-        </span>
+        <ChevronDown size={16} className="transition-transform duration-200 select-none" style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }} aria-hidden="true" />
       </Button>
 
       {isOpen && (

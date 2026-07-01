@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Bookmark, ArrowRight, Lock, SearchX } from "lucide-react";
 import PageContainer from "../components/layout/PageContainer";
 import BlogCard from "../components/blog/BlogCard";
 import SearchBar from "../components/ui/SearchBar";
@@ -11,12 +12,7 @@ function EmptyAuthenticated() {
   return (
     <div className="flex flex-col items-center justify-center py-24 text-center max-w-md mx-auto">
       <div className="w-20 h-20 rounded-full bg-action-orange/10 flex items-center justify-center mb-6">
-        <span
-          className="material-symbols-outlined text-[40px] text-action-orange"
-          style={{ fontVariationSettings: "'FILL' 1, 'wght' 300" }}
-        >
-          bookmark
-        </span>
+        <Bookmark size={40} className="text-action-orange" fill="currentColor" strokeWidth={1} />
       </div>
       <h2 className="font-display-lg text-2xl font-bold text-primary mb-3">
         No saved articles yet
@@ -29,7 +25,7 @@ function EmptyAuthenticated() {
         className="inline-flex items-center gap-2 bg-action-orange text-white font-bold px-6 py-2.5 rounded-lg hover:opacity-90 active:scale-95 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-action-orange focus-visible:ring-offset-2"
       >
         <span>Browse Articles</span>
-        <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+        <ArrowRight size={18} />
       </Link>
     </div>
   );
@@ -39,12 +35,7 @@ function EmptyUnauthenticated() {
   return (
     <div className="flex flex-col items-center justify-center py-24 text-center max-w-md mx-auto">
       <div className="w-20 h-20 rounded-full bg-surface-container flex items-center justify-center mb-6">
-        <span
-          className="material-symbols-outlined text-[40px] text-on-surface-variant"
-          style={{ fontVariationSettings: "'FILL' 0, 'wght' 300" }}
-        >
-          lock
-        </span>
+        <Lock size={40} className="text-on-surface-variant" strokeWidth={1} />
       </div>
       <h2 className="font-display-lg text-2xl font-bold text-primary mb-3">
         Log in to view saved articles
@@ -77,12 +68,7 @@ export default function SavedArticles() {
         {/* Page Header */}
         <section className="mb-stack-md">
           <div className="flex items-center gap-3 mb-2">
-            <span
-              className="material-symbols-outlined text-[28px] text-action-orange"
-              style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}
-            >
-              bookmark
-            </span>
+            <Bookmark size={28} className="text-action-orange" fill="currentColor" strokeWidth={1.5} />
             <h1 className="font-display-lg text-3xl sm:text-4xl font-bold text-primary leading-tight">
               Saved Articles
             </h1>
@@ -118,7 +104,7 @@ export default function SavedArticles() {
               </div>
             ) : (
               <div className="py-16 text-center text-on-surface-variant">
-                <span className="material-symbols-outlined text-[40px] text-outline-variant mb-4 block">search_off</span>
+                <SearchX size={40} className="text-outline-variant mb-4 mx-auto block" strokeWidth={1.5} />
                 <p className="text-body-md font-light">No saved articles match your search.</p>
                 <button
                   onClick={() => setSearchVal("")}

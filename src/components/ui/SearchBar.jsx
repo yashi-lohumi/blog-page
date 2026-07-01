@@ -1,6 +1,7 @@
 import React from "react";
 import Input from "./Input";
 import Button from "./Button";
+import { Search, X } from "lucide-react";
 
 export default function SearchBar({ value, onChange, placeholder = "Search articles..." }) {
   const handleClear = () => {
@@ -9,9 +10,7 @@ export default function SearchBar({ value, onChange, placeholder = "Search artic
 
   return (
     <div className="relative w-full flex items-center bg-surface-container rounded-full px-4 py-1.5 border border-outline-variant/30 focus-within:border-action-orange focus-within:ring-1 focus-within:ring-action-orange transition-all duration-300">
-      <span className="material-symbols-outlined text-outline text-md mr-2 select-none">
-        search
-      </span>
+      <Search size={18} className="text-outline mr-2 select-none" aria-hidden="true" />
       <input
         type="text"
         placeholder={placeholder}
@@ -27,7 +26,7 @@ export default function SearchBar({ value, onChange, placeholder = "Search artic
           className="p-1 hover:bg-surface-container-high rounded-full ml-2 text-outline-variant hover:text-primary transition-colors"
           ariaLabel="Clear search text"
         >
-          <span className="material-symbols-outlined text-sm select-none">close</span>
+          <X size={16} className="select-none" aria-hidden="true" />
         </Button>
       )}
     </div>

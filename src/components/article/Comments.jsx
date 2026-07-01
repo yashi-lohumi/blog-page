@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../ui/Button";
 import Input from "../ui/Input";
 import Avatar from "../ui/Avatar";
+import { ThumbsUp } from "lucide-react";
 
 export default function Comments({ blogId }) {
   // Local state initialized with the wireframe comments
@@ -178,12 +179,11 @@ export default function Comments({ blogId }) {
                     }`}
                     ariaLabel={`Like comment by ${comment.authorName}`}
                   >
-                    <span 
-                      className="material-symbols-outlined text-[18px]"
-                      style={{ fontVariationSettings: comment.likedByUser ? "'FILL' 1" : "'FILL' 0" }}
-                    >
-                      thumb_up
-                    </span>
+                    <ThumbsUp
+                      size={18}
+                      fill={comment.likedByUser ? "currentColor" : "none"}
+                      className="transition-colors"
+                    />
                     <span>{comment.likes > 0 ? comment.likes : ""} Like</span>
                   </Button>
                   <Button
@@ -252,12 +252,11 @@ export default function Comments({ blogId }) {
                           }`}
                           ariaLabel={`Like reply by ${reply.name || reply.authorName}`}
                         >
-                          <span 
-                            className="material-symbols-outlined text-[16px]"
-                            style={{ fontVariationSettings: reply.likedByUser ? "'FILL' 1" : "'FILL' 0" }}
-                          >
-                            thumb_up
-                          </span>
+                          <ThumbsUp
+                            size={16}
+                            fill={reply.likedByUser ? "currentColor" : "none"}
+                            className="transition-colors"
+                          />
                           <span>{reply.likes > 0 ? reply.likes : ""} Like</span>
                         </Button>
                       </div>

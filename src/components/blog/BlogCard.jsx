@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 import Card from "../ui/Card";
 import Badge from "../ui/Badge";
 import BookmarkButton from "../article/BookmarkButton";
@@ -58,9 +59,7 @@ export default function BlogCard({ blog }) {
         <div className="mt-auto pt-3 border-t border-outline-variant/10">
           <div className="flex items-center justify-between text-outline text-label-sm">
             <span>{formatDate(blog.publishDate)} · {blog.readTime} min read</span>
-            <span className="material-symbols-outlined text-outline-variant group-hover:text-action-orange group-hover:translate-x-1 transition-all select-none text-[18px]">
-              arrow_forward
-            </span>
+            <ArrowRight size={18} className="text-outline-variant group-hover:text-action-orange group-hover:translate-x-1 transition-all select-none" />
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Button from "./Button";
+import { X } from "lucide-react";
 
 export default function Modal({
   isOpen,
@@ -39,7 +40,7 @@ export default function Modal({
         <div className="flex justify-between items-center mb-4">
           <h3 className="font-headline-sm text-headline-sm text-primary">{title}</h3>
           <Button variant="icon" onClick={onClose} ariaLabel="Close dialog">
-            <span className="material-symbols-outlined text-sm">close</span>
+            <X size={16} />
           </Button>
         </div>
         <div>{children}</div>

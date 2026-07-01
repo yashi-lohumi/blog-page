@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { Bookmark } from "lucide-react";
 import Toast from "../ui/Toast";
 import { useAuth } from "../../context/AuthContext";
 
@@ -63,7 +64,7 @@ export default function BookmarkButton({ slug, className = "", size = "md" }) {
     });
   }, [isAuthenticated, isSaved, toggleSave, slug, navigate, closeToast]);
 
-  const iconSize = size === "sm" ? "text-[18px]" : "text-[22px]";
+  const iconSize = size === "sm" ? 18 : 22;
   const btnSize = size === "sm" ? "w-8 h-8" : "w-10 h-10";
 
   return (
@@ -83,14 +84,11 @@ export default function BookmarkButton({ slug, className = "", size = "md" }) {
           }
         `}
       >
-        <span
-          className={`material-symbols-outlined ${iconSize} transition-all duration-300 select-none ${saved ? "scale-110" : "scale-100"}`}
-          style={{
-            fontVariationSettings: saved ? "'FILL' 1, 'wght' 400" : "'FILL' 0, 'wght' 400",
-          }}
-        >
-          bookmark
-        </span>
+        <Bookmark
+          size={iconSize}
+          fill={saved ? "currentColor" : "none"}
+          className={`transition-all duration-300 select-none ${saved ? "scale-110 text-action-orange" : "scale-100"}`}
+        />
       </button>
 
       <Toast

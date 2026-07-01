@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { Code, Calendar, Clock, Eye } from "lucide-react";
 import PageContainer from "../components/layout/PageContainer";
 import Breadcrumb from "../components/article/Breadcrumb";
 import ReadingProgressBar from "../components/article/ReadingProgressBar";
@@ -89,7 +90,7 @@ export default function BlogDetails() {
           <div key={idx} className="my-6 border border-outline-variant/15 rounded-lg overflow-hidden bg-primary shadow-lg">
             <div className="bg-surface-container-lowest px-4 py-2 border-b border-outline-variant/10 text-label-sm text-outline select-none font-mono flex justify-between items-center">
               <span>{block.language || "code"}</span>
-              <span className="material-symbols-outlined text-[14px]">code</span>
+              <Code size={14} />
             </div>
             <pre className="p-6 overflow-x-auto font-mono text-sm text-white/95 leading-relaxed bg-[#0F0F0F]">
               <code>{block.code}</code>
@@ -161,11 +162,11 @@ export default function BlogDetails() {
                 </div>
                 <div className="flex items-center gap-4 text-on-surface-variant text-[12px]">
                   <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[13px]">calendar_today</span>
+                    <Calendar size={13} />
                     {formatDate(blog.publishDate)}
                   </span>
                   <span className="flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[13px]">schedule</span>
+                    <Clock size={13} />
                     {blog.readTime} min read
                   </span>
                 </div>
@@ -175,9 +176,7 @@ export default function BlogDetails() {
               <div className="flex items-center gap-3">
                 <BookmarkButton slug={blog.slug} />
                 <div className="flex items-center gap-1.5 text-[12px] text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded-full border border-outline-variant/15">
-                  <span className="material-symbols-outlined text-[14px] text-outline" style={{ fontVariationSettings: "'FILL' 0, 'wght' 300" }}>
-                    visibility
-                  </span>
+                  <Eye size={14} className="text-outline" />
                   <span className="font-medium tabular-nums">
                     {blog.views >= 1000
                       ? `${(blog.views / 1000).toFixed(blog.views % 1000 === 0 ? 0 : 1)}k`

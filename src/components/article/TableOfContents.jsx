@@ -3,6 +3,7 @@ import { useScrollSpy } from "../../hooks/useScrollSpy";
 import { copyToClipboard } from "../../utils/copyToClipboard";
 import Toast from "../ui/Toast";
 import Button from "../ui/Button";
+import { List, ChevronDown } from "lucide-react";
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 export function slugify(text) {
@@ -172,15 +173,14 @@ export default function TableOfContents({ contentBlocks = [], title = "", slug =
           aria-controls="mobile-toc"
         >
           <span className="flex items-center gap-2 font-bold text-label-md">
-            <span className="material-symbols-outlined text-[18px] select-none">toc</span>
+            <List size={18} className="select-none" />
             Contents
           </span>
-          <span
-            className="material-symbols-outlined select-none transition-transform duration-200"
+          <ChevronDown
+            size={20}
+            className="select-none transition-transform duration-200"
             style={{ transform: isOpenMobile ? "rotate(180deg)" : "none" }}
-          >
-            expand_more
-          </span>
+          />
         </Button>
         {isOpenMobile && (
           <div id="mobile-toc" className="p-4 bg-surface-container rounded-lg border border-outline-variant/20 mt-2">

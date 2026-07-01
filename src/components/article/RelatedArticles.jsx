@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Badge from "../ui/Badge";
 import BookmarkButton from "../article/BookmarkButton";
 import { formatDate } from "../../utils/formatDate";
@@ -41,7 +42,7 @@ function RelatedCard({ blog }) {
         </p>
         <div className="mt-auto flex items-center justify-between text-[11px] text-outline pt-3 border-t border-outline-variant/10">
           <span>{formatDate(blog.publishDate)} · {blog.readTime} min read</span>
-          <span className="material-symbols-outlined text-[16px] group-hover:text-action-orange group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+          <ArrowRight size={16} className="group-hover:text-action-orange group-hover:translate-x-0.5 transition-all" />
         </div>
       </div>
     </article>
@@ -94,7 +95,7 @@ export default function RelatedArticles({ currentBlog, allBlogs = [] }) {
             aria-label="Scroll related articles left"
             className="w-8 h-8 rounded-full border border-outline-variant/25 bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-action-orange hover:border-action-orange/40 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-action-orange"
           >
-            <span className="material-symbols-outlined text-[18px]">chevron_left</span>
+            <ChevronLeft size={18} />
           </button>
           <button
             type="button"
@@ -102,7 +103,7 @@ export default function RelatedArticles({ currentBlog, allBlogs = [] }) {
             aria-label="Scroll related articles right"
             className="w-8 h-8 rounded-full border border-outline-variant/25 bg-surface-container-low flex items-center justify-center text-on-surface-variant hover:text-action-orange hover:border-action-orange/40 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-action-orange"
           >
-            <span className="material-symbols-outlined text-[18px]">chevron_right</span>
+            <ChevronRight size={18} />
           </button>
         </div>
       </div>

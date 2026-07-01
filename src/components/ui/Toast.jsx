@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { CheckCircle, AlertCircle, Bookmark, Info, X } from "lucide-react";
 
 /**
  * Toast with optional action buttons (e.g. Log In / Not Now).
@@ -34,13 +35,13 @@ export default function Toast({
   };
 
   const iconMap = {
-    success: { name: "check_circle", color: "text-green-500" },
-    error: { name: "error", color: "text-red-500" },
-    auth: { name: "bookmark", color: "text-action-orange" },
-    info: { name: "info", color: "text-on-surface-variant" },
+    success: { Icon: CheckCircle, color: "text-green-500" },
+    error: { Icon: AlertCircle, color: "text-red-500" },
+    auth: { Icon: Bookmark, color: "text-action-orange", fill: "currentColor" },
+    info: { Icon: Info, color: "text-on-surface-variant" },
   };
 
-  const icon = iconMap[type];
+  const { Icon, color, fill } = iconMap[type];
 
   return (
     <div
@@ -49,12 +50,7 @@ export default function Toast({
       className={`fixed bottom-8 left-1/2 -translate-x-1/2 z-[200] flex flex-col gap-3 px-5 py-4 rounded-xl border backdrop-blur-sm min-w-[280px] max-w-sm transition-all duration-300 animate-in ${styles[type]}`}
     >
       <div className="flex items-start gap-3">
-        <span
-          className={`material-symbols-outlined text-[20px] mt-0.5 flex-shrink-0 ${icon.color}`}
-          style={{ fontVariationSettings: "'FILL' 1, 'wght' 400" }}
-        >
-          {icon.name}
-        </span>
+        <Icon size={20} className={`mt-0.5 flex-shrink-0 ${color}`} fill={fill || "none"} />
         <div className="flex-1">
           <p className="font-semibold text-label-md text-primary leading-snug">{message}</p>
           {subMessage && (
@@ -66,7 +62,7 @@ export default function Toast({
           className="text-outline hover:text-primary transition-colors flex-shrink-0 ml-1"
           aria-label="Dismiss notification"
         >
-          <span className="material-symbols-outlined text-[18px]">close</span>
+          <X size={18} />
         </button>
       </div>
 

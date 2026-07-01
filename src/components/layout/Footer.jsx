@@ -64,7 +64,7 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#111111] text-white mt-auto" style={{ fontFamily: "'Inter Display', 'inter display placeholder', sans-serif" }}>
       {/* ── Main footer content ── */}
-      <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-14 pb-10">
+      <div className="w-full px-margin-mobile md:px-margin-desktop pt-14 pb-10">
         <div className="grid grid-cols-2 md:grid-cols-[2.5fr_1fr_1fr_0.5fr] gap-10 md:gap-8 lg:gap-16">
 
           {/* ── Column 1: Brand ── */}
@@ -130,11 +130,11 @@ export default function Footer() {
           </div>
 
           {/* ── Column 4: Social ── */}
-          <div className="col-span-2 md:col-span-1 flex flex-row items-center justify-between md:flex-col md:items-start md:justify-start border-b border-white/10 md:border-none pb-6 md:pb-0 mb-2 md:mb-0">
-            <h5 className="text-[16px] md:text-[20px] font-medium capitalize text-white mb-0 md:mb-6 select-none">
+          <div className="col-span-2 md:col-span-1 flex flex-row items-center justify-between md:flex-col md:items-center md:justify-start border-b border-white/10 md:border-none pb-6 md:pb-0 mb-2 md:mb-0">
+            <h5 className="text-[16px] md:text-[20px] font-medium capitalize text-white mb-0 md:mb-6 select-none md:text-center">
               Social
             </h5>
-            <div className="flex flex-row md:flex-col gap-4">
+            <div className="flex flex-row md:flex-col gap-4 items-center">
               {SOCIAL_LINKS.map(({ href, label, Icon }) => (
                 <a
                   key={label}
@@ -154,9 +154,9 @@ export default function Footer() {
 
       {/* ── Bottom bar ── */}
       <div className="border-t border-white/[0.07] pt-2 md:pt-0">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-5 flex flex-col-reverse sm:flex-row items-center justify-between gap-5 sm:gap-3">
+        <div className="w-full px-margin-mobile md:px-margin-desktop py-5 flex flex-col-reverse sm:flex-row items-center justify-between gap-5 sm:gap-3">
           <p className="text-[14px] md:text-[18px] text-white select-none">
-            © 2025 MarTechAdda. All rights reserved.
+            © 2026 MarTechAdda. All rights reserved.
           </p>
           <a
             href="#"

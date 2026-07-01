@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ChevronRight } from "lucide-react";
 
 export default function Breadcrumb({ category, title }) {
   return (
@@ -13,7 +14,7 @@ export default function Breadcrumb({ category, title }) {
       >
         Home
       </Link>
-      <span className="material-symbols-outlined text-[14px] select-none">chevron_right</span>
+      <ChevronRight size={14} className="select-none" />
       
       <Link 
         to="/blog" 
@@ -21,7 +22,7 @@ export default function Breadcrumb({ category, title }) {
       >
         Blog
       </Link>
-      <span className="material-symbols-outlined text-[14px] select-none">chevron_right</span>
+      <ChevronRight size={14} className="select-none" />
 
       {category && (
         <>
@@ -31,7 +32,7 @@ export default function Breadcrumb({ category, title }) {
           >
             {category}
           </Link>
-          <span className="material-symbols-outlined text-[14px] select-none">chevron_right</span>
+          <ChevronRight size={14} className="select-none" />
         </>
       )}
 

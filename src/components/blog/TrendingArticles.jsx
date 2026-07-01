@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { TrendingUp, Eye } from "lucide-react";
 
 export default function TrendingArticles({ blogs = [] }) {
   const navigate = useNavigate();
@@ -18,9 +19,7 @@ export default function TrendingArticles({ blogs = [] }) {
         id="sidebar-trending-articles"
         className="text-[10px] uppercase tracking-widest text-on-surface-variant mb-3 flex items-center gap-1.5 font-bold select-none"
       >
-        <span className="material-symbols-outlined text-action-orange text-[15px] select-none">
-          trending_up
-        </span>
+        <TrendingUp size={15} className="text-action-orange select-none" />
         Trending Now
       </h4>
       <div className="space-y-2">
@@ -48,7 +47,7 @@ export default function TrendingArticles({ blogs = [] }) {
                   {blog.title}
                 </h5>
                 <p className="text-[11px] text-outline mt-1 flex items-center gap-1 font-light">
-                  <span className="material-symbols-outlined text-[12px] select-none">visibility</span>
+                  <Eye size={12} className="select-none" />
                   {(blog.views / 1000).toFixed(1)}k views
                 </p>
               </div>
